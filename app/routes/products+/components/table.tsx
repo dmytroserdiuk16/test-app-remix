@@ -1,9 +1,6 @@
-import {useTranslation} from 'react-i18next';
-import {useSnackbar} from 'notistack';
 import {format} from 'date-fns';
 
 import {
-  Badge,
   Card,
   CardActionArea,
   CardContent,
@@ -31,7 +28,8 @@ export const ProductsTable = ({data}: {data?: ApiProduct[]; isLoading: boolean})
               component="img"
               height="250"
               image={row.image ?? '/product.jpg'}
-              alt={row.productId ?? 'image'}
+              alt={row.title.en ?? ''}
+              area-hidden="true"
             />
             <CardContent>
               <Stack direction="row" alignItems="center" gap={1}>
